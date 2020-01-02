@@ -7,5 +7,7 @@
     "dependencies": {
         "commander": "^4.0",
         "puppeteer": "^2.0"
-    }
+    },
+    "main": "./ecoindex.js",
+    "bin": "./ecoindex.js"
 }

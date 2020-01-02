@@ -72,5 +72,10 @@ const calculator = require('./calculator.js');
 
     var index = calculator.calculate(dom, req, Math.round(size / 1024));
 
-    console.log(index);
+    if (input.format === 'json') {
+        process.stdout.write(JSON.stringify({url: url, dom: dom, req: req, size: size, ecoindex: index}));
+        return;
+    }
+
+    process.stdout.write(index.toString());
 })();

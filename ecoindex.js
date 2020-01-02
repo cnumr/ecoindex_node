@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const zlib = require('zlib');
 const input = require('commander');
 const puppeteer = require('puppeteer');

@@ -3,11 +3,5 @@
     "version": "1.0.0",
     "author": "Cyril Vermande",
     "license": "MIT",
-    "description": "Calculates a webpage ecoindex (from http://www.ecoindex.fr)",
-    "dependencies": {
-        "commander": "^4.0",
-        "puppeteer": "^2.0"
-    },
-    "main": "./ecoindex.js",
-    "bin": "./ecoindex.js"
+    "description": "Calculate a webpage's ecoindex (from http://www.ecoindex.fr)"
 }

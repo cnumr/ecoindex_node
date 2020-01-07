@@ -1,6 +1,6 @@
 # cyve/ecoindex
 
-This Node.js module calculates a webpage's ecoindex (from http://www.ecoindex.fr)
+This Node.js module calculates a webpage's [ecoindex](http://www.ecoindex.fr)
 
 ## Installation
 ```bash

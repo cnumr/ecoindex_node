@@ -4,7 +4,7 @@ This Node.js module calculates a webpage's [ecoindex](http://www.ecoindex.fr)
 
 ## Installation
 ```bash
-$ npm install https://github.com/cyve/ecoindex_node/tarball/master
+$ npm install https://github.com/cnumr/ecoindex_node/tarball/master
 ```
 
 ## Usage

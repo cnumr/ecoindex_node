@@ -15,9 +15,9 @@ const ecoindex = require('ecoindex');
  * dom = number of HTML elements in DOM
  * req = number of external requests (images, css, frames, etc.)
  * size = total size of the page (including external requests) in ko
- * returns a float between 0 and 100 (higher is better)
+ * returns an object containing the ecoindex score (number between 0 and 100, higher is better), the grade (letter between A and G), the greenhouse gas emission and the water consumption
  **/
-var index = ecoindex.calculate(dom, req, size);
+var index = ecoindex.getEcoindex(dom, req, size); // { score: 89, grade: 'A', ghg: 1.22, water: 1.83 }
 ```
 
 Full example with [puppeteer](https://github.com/puppeteer/puppeteer) :

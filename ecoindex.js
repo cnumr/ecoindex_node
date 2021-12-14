@@ -23,34 +23,67 @@ var calculateIndex = function (quantiles, value) {
  * @param {number} size Page size in ko
  * @return {number}
  */
-module.exports.calculate = function (dom, req, size) {
+var getScore = function (dom, req, size) {
     var domIndex = calculateIndex(domQuantiles, dom),
         reqIndex = calculateIndex(reqQuantiles, req),
         sizeIndex = calculateIndex(sizeQuantiles, size),
         total = 100 - 5 * (3 * domIndex + 2 * reqIndex + sizeIndex) / 6;
 
-    return parseFloat(total.toPrecision(3));
+    return Math.round(total);
 };
 
 /**
- * @param {number} index EcoIndex
+ * @param {number} score EcoIndex score
  * @return {string}
  */
-module.exports.getNote = function (index) {
+var getGrade = function (score) {
     switch (true) {
-        case index >= 75:
+        case score >= 75:
             return 'A';
-        case index >= 65:
+        case score >= 65:
             return 'B';
-        case index >= 50:
+        case score >= 50:
             return 'C';
-        case index >= 35:
+        case score >= 35:
             return 'D';
-        case index >= 20:
+        case score >= 20:
             return 'E';
-        case index >= 5:
+        case score >= 5:
             return 'F';
         default:
             return 'G';
     }
+};
+
+/**
+ * @param {number} dom Number of DOM elements
+ * @param {number} req Number of HTTP requests
+ * @param {number} size Page size in ko
+ * @return {number}
+ */
+module.exports.getEcoindex = function (dom, req, size) {
+	var score = getScore(dom, req, size);
+
+    return {
+		score: score,
+		grade: getGrade(score),
+	}
+};
+
+/**
+ * @deprecated
+ */
+module.exports.calculate = function (dom, req, size) {
+	console.debug('[Notice] The method "ecoindex.calculate()" is deprecated since version 1.3 and will be removed in version 2.0. Use "ecoindex.getEcoindex()" instead.');
+
+    return getScore(dom, req, size);
+};
+
+/**
+ * @deprecated
+ */
+module.exports.getNote = function (index) {
+	console.debug('[Notice] The method "ecoindex.getNote()" is deprecated since version 1.3 and will be removed in version 2.0. Use "ecoindex.getEcoindex()" instead.');
+
+    return getGrade(index);
 };

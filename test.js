@@ -57,8 +57,8 @@ const ecoindex = require('./ecoindex.js');
 
     await browser.close();
 
-    // calculate ecoindex
-    var index = ecoindex.calculate(dom, req, Math.round(size / 1024));
+    // get ecoindex
+    var result = ecoindex.getEcoindex(dom, req, Math.round(size / 1024));
 
-    console.log(index, ecoindex.getNote(index));
+    console.log(result);
 })();

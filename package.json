@@ -4,5 +4,8 @@
     "author": "Cyril Vermande",
     "license": "MIT",
     "description": "Calculate a webpage's ecoindex (from http://www.ecoindex.fr)",
-    "main": "ecoindex.js"
+    "main": "ecoindex.js",
+    "devDependencies": {
+        "puppeteer": "^13.0.0"
+    }
 }

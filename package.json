@@ -6,6 +6,10 @@
     "description": "Calculate a webpage's ecoindex (from http://www.ecoindex.fr)",
     "main": "ecoindex.js",
     "devDependencies": {
+        "jasmine": "^4.4.0",
         "puppeteer": "^13.0.0"
+    },
+    "scripts": {
+        "test": "jasmine"
     }
 }

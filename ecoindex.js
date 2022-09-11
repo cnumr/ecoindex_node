@@ -10,11 +10,11 @@ var sizeQuantiles = [0, 1.37, 144.7, 319.53, 479.46, 631.97, 783.38, 937.91, 109
 var calculateIndex = function (quantiles, value) {
     for (var i = 1; i < quantiles.length; i++) {
         if (value < quantiles[i]) {
-            return (i + (value - quantiles[i - 1]) / (quantiles[i] - quantiles[i - 1]));
+			return (i - 1 + (value - quantiles[i - 1]) / (quantiles[i] - quantiles[i - 1]));
         }
     }
 
-    return quantiles.length;
+    return quantiles.length - 1;
 };
 
 /**

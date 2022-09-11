@@ -59,7 +59,7 @@ var getGrade = function (score) {
  * @param {number} score EcoIndex score
  * @return {number}
  */
-var getGreenhouseGasEmmission = function (score) {
+var getGreenhouseGasEmission = function (score) {
     return Math.round(100 * (2 + 2 * (50 - score) / 100)) / 100;
 };
 
@@ -83,7 +83,7 @@ module.exports.getEcoindex = function (dom, req, size) {
     return {
 		score: score,
 		grade: getGrade(score),
-		ghg: getGreenhouseGasEmmission(score),
+		ghg: getGreenhouseGasEmission(score),
 		water: getWaterConsumption(score),
 	}
 };

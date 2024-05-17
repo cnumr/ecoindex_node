@@ -1,7 +1,7 @@
 {
     "name": "ecoindex",
     "version": "1.0.0",
-    "author": "Cyril Vermande",
+    "author": "Cyril Vmd",
     "license": "MIT",
     "description": "Calculate a webpage's ecoindex (from http://www.ecoindex.fr)",
     "main": "ecoindex.js",
